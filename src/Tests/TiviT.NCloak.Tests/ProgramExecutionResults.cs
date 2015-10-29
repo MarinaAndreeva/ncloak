@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using NUnit.Framework;
 using System.IO;
@@ -69,7 +70,7 @@ namespace TiviT.NCloak.Tests
             //Check the registered commands text
             Assert.That(stdOut.ReadLine(), Is.EqualTo("Registered commands are:"),
                         "Registered commands introduction");
-            Assert.That(stdOut.ReadLine(), Is.EqualTo("quit hello "), "Registered commands");
+            Assert.That(stdOut.ReadLine(), Is.EqualTo("quit hello test "), "Registered commands");
 
             //Make sure that the prompt is displayed
             char[] promptBuffer = new char[2];
@@ -95,7 +96,12 @@ namespace TiviT.NCloak.Tests
 
             //Done! Ensure that the program is killed
             if (!process.HasExited)
-                process.Kill();
+                try
+                {
+                    process.Kill();
+                }
+                catch (Win32Exception)
+                { }
         }
     }
 }

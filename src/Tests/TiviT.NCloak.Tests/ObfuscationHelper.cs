@@ -15,6 +15,7 @@ namespace TiviT.NCloak.Tests
             //Configure it (as necessary) - tasks etc
             manager.RegisterTask<CloakTasks.MappingTask>();
             manager.RegisterTask<CloakTasks.ObfuscationTask>();
+            manager.RegisterTask<CloakTasks.OutputAssembliesTask>();
             //Create a cloaking context
             InitialisationSettings settings = new InitialisationSettings();
             settings.AssembliesToObfuscate.AddRange(assemblies);
