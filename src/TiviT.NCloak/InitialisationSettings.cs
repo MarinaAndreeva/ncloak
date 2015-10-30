@@ -119,6 +119,11 @@ namespace TiviT.NCloak
             get; set;
         }
 
+        public bool CombineLocals
+        {
+            get; set;
+        }
+
         /// <summary>
         /// Validates the initialisation settings.
         /// </summary>

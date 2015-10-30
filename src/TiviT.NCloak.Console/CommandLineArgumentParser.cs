@@ -80,6 +80,10 @@ namespace TiviT.NCloak.Console
                             settings.EncryptStrings = true;
                             break;
 
+                        case "combinelocals":
+                            settings.CombineLocals = true;
+                            break;
+
                         case "suppressildasm":
                             switch (argValue)
                             {
@@ -207,6 +211,8 @@ namespace TiviT.NCloak.Console
             System.Console.WriteLine("  /norename\t\tTurns off member renaming");
 
             System.Console.WriteLine("  /strings\t\tEnables encryption of strings");
+
+            System.Console.WriteLine("  /combinelocals\t\tEnables combining few locals to one");
 
             System.Console.WriteLine("  /tamperproof name\tPackages the output assemblies into a tamperproofed");
             System.Console.WriteLine("  \t\t\tbootstrapper assembly");

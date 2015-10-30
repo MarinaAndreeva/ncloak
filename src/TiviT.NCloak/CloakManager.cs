@@ -70,6 +70,10 @@ namespace TiviT.NCloak
             if (context.Settings.ConfuseDecompilationMethod == ConfusionMethod.None) //HACK: The new Mono.Cecil doesn't like bad IL codes
                 RegisterTask<OptimizeTask>();
 
+            //TODO: Register methods here
+            if (context.Settings.CombineLocals)
+                RegisterTask<CombineLocals>();
+
             //Always last - output the assembly in the relevant format
             if (String.IsNullOrEmpty(context.Settings.TamperProofAssemblyName))
                 RegisterTask<OutputAssembliesTask>(); //Default
